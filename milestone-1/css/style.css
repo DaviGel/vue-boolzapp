@@ -124,16 +124,18 @@ body {
 
 .container .sidebar main .search-bar i {
   margin-left: 20px;
-  padding: 9px;
+  padding: 9px 28px;
   background-color: #fff;
 }
 
 .container .sidebar main .search-bar input {
   border: none;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
   height: 34px;
   flex-grow: 1;
   margin: 8px 20px 8px 0;
+  padding-left: 10px;
+  outline: none;
 }
 
 .container .sidebar main .contacts-list {
@@ -197,6 +199,7 @@ body {
   border: none;
   margin: 0 35px;
   padding-left: 15px;
+  outline: none;
 }
 
 .container .main-content footer .footer-content i {
