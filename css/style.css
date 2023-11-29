@@ -1,5 +1,138 @@
+/* #region RESET */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* #endregion */
+
+/* #region COMMON */
+
+[v-cloak] {
+  display: none;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px 160px;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+/* #endregion */
+
+/* #region BODY */
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#009788 20%, #d6dad9 20%);
+  font-family: 'Lato', sans-serif;
+}
+
+/* #endregion */
+
+/* #region APP */
+
+.container .sidebar {
+  width: 40%;
+}
+
+.container .sidebar header {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #eaeaea;
+}
+
+.container .sidebar header .left-content,
+.container .sidebar header .right-content {
+  display: flex;
+  align-items: center;
+}
+
+.container .sidebar header .left-content img {
+  margin: 0 15px;
+}
+
+.container #img-profile {
+  width: 50px;
+  height: 50px;
+}
+
+.container .sidebar header .right-content #sidebar-icons {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.container .sidebar header .right-content i {
+  color: #b1b1b1;
+  margin-right: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.container .main-content {
+  width: 60%;
+}
+
+.container .sidebar main .notification-settings {
+  height: 80px;
+  background-color: #8edafc;
+  display: flex;
+  align-items: center;
+}
+
+.container .sidebar main .notification-settings .notification-icon {
+  background-color: #f8f9fe;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  margin: 0 15px;
+}
+
+.container .sidebar main .notification-settings .text a {
+  color: #5d7485;
+}
+
+.container .sidebar main .notification-settings i {
+  font-size: 25px;
+  line-height: 50px;
+  color: #8cdbfc;
+}
+
+.container .sidebar main .search-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+.container .sidebar main .search-bar i {
+  margin-left: 20px;
+  padding: 9px;
+  background-color: #fff;
+}
+
+.container .sidebar main .search-bar input {
+  outline: none;
+  border: none;
+  height: 34px;
+  flex-grow: 1;
+  margin: 8px 20px 8px 0;
+}
+
+.container .sidebar main .contacts-list {
+  list-style: none;
+}
+
+/* #endregion */

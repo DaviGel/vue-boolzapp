@@ -4,10 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <!-- Mio CSS -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <div id="app" v-cloak>
+      <div class="container">
+        <div class="sidebar">
+          <header>
+            <div class="left-content">
+              <img
+                id="img-profile"
+                :src="myProfile.avatar"
+                :alt="myProfile.name"
+              />
+              <span> {{ myProfile.name }} </span>
+            </div>
+            <div class="right-content">
+              <ul id="sidebar-icons">
+                <li>
+                  <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-message"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                </li>
+              </ul>
+            </div>
+          </header>
+          <main>
+            <div class="notification-settings">
+              <div class="notification-icon">
+                <i class="fa-regular fa-bell-slash"></i>
+              </div>
+              <div class="text">
+                <div>Ricevi notifiche di nuovi messaggi</div>
+                <a href="#">Attiva notifiche desktop</a>
+              </div>
+            </div>
+            <div class="search-bar">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Cerca o inizia una nuova chat" />
+            </div>
+            <ul class="contacts-list">
+              <li v-for="contact in contacts">
+                <img src="contact.avatar" alt="contact.name" />
+                <span>{{ contact.name }}</span>
+              </li>
+            </ul>
+          </main>
+        </div>
+        <div class="main-content">
+          <header></header>
+          <main></main>
+          <footer></footer>
+        </div>
+      </div>
+    </div>
+    <!-- Vue JS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Mio JS -->
     <script src="js/main.js"></script>
   </body>
