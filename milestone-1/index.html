@@ -64,9 +64,12 @@
               <input type="text" placeholder="Cerca o inizia una nuova chat" />
             </div>
             <ul class="contacts-list">
-              <li v-for="contact in contacts">
-                <img :src="contact.avatar" :alt="contact.name" />
-                <span>{{ contact.name }}</span>
+              <li v-for="(contact,index) in contacts">
+                <div class="contact-info">
+                  <img :src="contact.avatar" :alt="contact.name" />
+                  <span>{{ contact.name }}</span>
+                </div>
+                <hr v-if="index < contacts.length - 1" />
               </li>
             </ul>
           </main>
