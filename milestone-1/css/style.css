@@ -173,10 +173,12 @@ body {
 
 .container .main-content main .received {
   background-color: #d5f9ba;
+  align-items: flex-start;
 }
 
 .container .main-content main .sent {
   background-color: #ffffff;
+  align-items: flex-end;
 }
 
 .container .main-content footer {
