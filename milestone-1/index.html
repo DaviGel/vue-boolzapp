@@ -36,7 +36,7 @@
               <span> {{ myProfile.name }} </span>
             </div>
             <div class="right-content">
-              <ul id="sidebar-icons">
+              <ul class="sidebar-icons">
                 <li>
                   <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
                 </li>
@@ -72,9 +72,40 @@
           </main>
         </div>
         <div class="main-content">
-          <header></header>
+          <header>
+            <div class="left-content">
+              <img
+                id="img-profile"
+                :src="myProfile.avatar"
+                :alt="myProfile.name"
+              />
+              <div class="profile">
+                <span> {{ myProfile.name }} </span>
+                <div class="last-access">Ultimo accesso oggi alle</div>
+              </div>
+            </div>
+            <div class="right-content">
+              <ul class="sidebar-icons">
+                <li>
+                  <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                </li>
+              </ul>
+            </div>
+          </header>
           <main></main>
-          <footer></footer>
+          <footer>
+            <div class="footer-content">
+              <a href="#"><i class="fa-regular fa-face-smile"></i></a>
+              <input type="text" placeholder="Scrivi un messaggio" />
+              <a href="#"><i class="fa-solid fa-microphone"></i></a>
+            </div>
+          </footer>
         </div>
       </div>
     </div>
