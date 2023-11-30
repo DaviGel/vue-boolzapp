@@ -223,6 +223,10 @@ createApp({
       });
       return this.contacts;
     },
+
+    deleteMessage(index) {
+      this.contacts[this.activeUser].messages.splice(index, 1);
+    },
   },
 
   mounted() {

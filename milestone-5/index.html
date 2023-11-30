@@ -128,7 +128,19 @@
                 :class="checkStatus(message)"
               >
                 <div class="message">
-                  <i class="fa-solid fa-angle-down"></i>
+                  <div class="dropdown">
+                    <i class="fa-solid fa-angle-down"></i>
+                    <div class="dropdown-content">
+                      <ul>
+                        <li><a href="#">Message info</a></li>
+                        <li>
+                          <a href="#" @click="deleteMessage(index)"
+                            >Delete message</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                   <div class="text-message">{{ message.message }}</div>
                   <span>{{ message.date }}</span>
                 </div>
