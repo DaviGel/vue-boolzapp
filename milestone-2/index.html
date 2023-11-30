@@ -31,10 +31,10 @@
             <div class="left-content">
               <img
                 id="img-profile"
-                :src="myProfile.avatar"
-                :alt="myProfile.name"
+                :src="myProfile[0].avatar"
+                :alt="myProfile[0].name"
               />
-              <h4>{{ myProfile.name }}</h4>
+              <h4>{{ myProfile[0].name }}</h4>
             </div>
             <!-- /My profile -->
             <!-- Icons -->
@@ -73,7 +73,7 @@
           <!-- Contact list -->
           <ul class="contacts-list">
             <li v-for="(contact,index) in contacts">
-              <div class="contact-info">
+              <div class="contact-info" @click="changeChat(index)">
                 <img :src="contact.avatar" :alt="contact.name" />
                 <h4>{{ contact.name }}</h4>
               </div>
@@ -88,11 +88,11 @@
             <div class="left-content">
               <img
                 id="img-profile"
-                :src="contacts[0].avatar"
-                :alt="contacts[0].name"
+                :src="contacts[activeUser].avatar"
+                :alt="contacts[activeUser].name"
               />
               <div class="profile">
-                <span> {{ contacts[0].name }} </span>
+                <span> {{ contacts[activeUser].name }} </span>
                 <div class="last-access">Ultimo accesso oggi alle</div>
               </div>
             </div>
@@ -113,12 +113,29 @@
             </div>
             <!-- /Icons -->
           </header>
-          <main></main>
+          <main>
+            <ul>
+              <li
+                v-for="(message, index) in contacts[activeUser].messages"
+                :class="checkStatus(message)"
+              >
+                <div class="message">
+                  {{ message.message }}
+                  <span>{{ messageDate }}</span>
+                </div>
+              </li>
+            </ul>
+          </main>
           <footer>
             <!-- Main footer -->
             <div class="footer-content">
               <a href="#"><i class="fa-regular fa-face-smile"></i></a>
-              <input type="text" placeholder="Scrivi un messaggio" />
+              <input
+                v-model="newText"
+                @keyup.enter="newMessage"
+                type="text"
+                placeholder="Scrivi un messaggio"
+              />
               <a href="#"><i class="fa-solid fa-microphone"></i></a>
             </div>
             <!-- /Main footer -->
@@ -126,6 +143,8 @@
         </div>
       </div>
     </div>
+    <!-- Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <!-- Vue JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Mio JS -->

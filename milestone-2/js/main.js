@@ -1,14 +1,22 @@
 'use strict';
 
 const { createApp } = Vue;
+const DateTime = luxon.DateTime;
 
 createApp({
   data() {
     return {
-      myProfile: {
-        name: 'Maria Rossi',
-        avatar: './img/avatar_io.jpg',
-      },
+      activeUser: 0,
+      formattedDate: '',
+      newText: null,
+      messageDate: null,
+      myProfile: [
+        {
+          name: 'Maria Rossi',
+          avatar: './img/avatar_io.jpg',
+          messages: [],
+        },
+      ],
       contacts: [
         {
           name: 'Michele',
@@ -173,5 +181,26 @@ createApp({
         },
       ],
     };
+  },
+
+  methods: {
+    changeChat(index) {
+      this.activeUser = index;
+    },
+
+    checkStatus(message) {
+      return message.status === 'received' ? 'received' : 'sent';
+    },
+
+    newMessage() {
+      if (this.newText.trim() === '') return;
+      const message = {
+        date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'),
+        message: this.newText,
+        status: 'sent',
+      };
+      this.contacts[this.activeUser].messages.push(message);
+      this.newText = null;
+    },
   },
 }).mount('#app');

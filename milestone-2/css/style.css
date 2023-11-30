@@ -190,7 +190,7 @@ body {
 
 /* #endregion */
 
-/* #region MAIN MAIN */
+/* #region MAIN CONTENT */
 
 .container .main-content main {
   background-image: url('../img/mine.jpg');
@@ -198,14 +198,44 @@ body {
   overflow-y: auto;
 }
 
-.container .main-content main .received {
-  background-color: #d5f9ba;
-  align-items: flex-start;
+.container .main-content main ul li {
+  display: flex;
+}
+
+.container .main-content main .received .message,
+.container .main-content main .sent .message {
+  display: inline-block;
+  width: 310px;
+  margin: 5px 100px;
+  padding: 15px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.container .main-content main .received .message {
+  background-color: #ffffff;
+}
+
+.container .main-content main .received span,
+.container .main-content main .sent span {
+  position: absolute;
+  right: 5px;
+  bottom: 7px;
+  font-size: 10px;
 }
 
 .container .main-content main .sent {
-  background-color: #ffffff;
-  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.container .main-content main .sent .message {
+  background-color: #d5f9ba;
+}
+
+.container .main-content main ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
 }
 
 /* #endregion */
