@@ -86,7 +86,7 @@
                   <h4>{{ contact.name }}</h4>
                   <div class="date-info">
                     Ultimo messaggio inviato {{
-                    contact.messages[lastMessage].date }}
+                    contact.messages[contact.messages.length - 1].date }}
                   </div>
                 </div>
               </div>

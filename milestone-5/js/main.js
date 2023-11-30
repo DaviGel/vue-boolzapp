@@ -9,7 +9,6 @@ createApp({
       activeUser: 0,
       newText: null,
       contactSearch: '',
-      lastMessage: 0,
       myProfile: [
         {
           name: 'Maria Rossi',
