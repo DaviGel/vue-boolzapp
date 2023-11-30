@@ -36,6 +36,7 @@ hr {
 
 body {
   height: 100vh;
+  /* Dati pixel fissi invece di 15% e 0 */
   background: linear-gradient(#009788 145px, #d6dad9 0);
   font-family: 'Lato', sans-serif;
   overflow: hidden;
