@@ -176,6 +176,12 @@ body {
   margin: 10px 20px;
 }
 
+.container .sidebar .contacts-list .date-info {
+  color: #bbb9c0;
+  font-weight: 500;
+  font-size: 12px;
+}
+
 .container .main-content {
   display: flex;
   flex-direction: column;

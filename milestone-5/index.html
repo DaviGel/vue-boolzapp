@@ -82,7 +82,13 @@
             >
               <div class="contact-info" @click="changeChat(index)">
                 <img :src="contact.avatar" :alt="contact.name" />
-                <h4>{{ contact.name }}</h4>
+                <div class="contact-name">
+                  <h4>{{ contact.name }}</h4>
+                  <div class="date-info">
+                    Ultimo messaggio inviato {{
+                    contact.messages[lastMessage].date }}
+                  </div>
+                </div>
               </div>
               <hr v-if="index < contacts.length - 1" />
             </li>
