@@ -66,6 +66,7 @@ body {
   display: flex;
   justify-content: space-between;
   background-color: #eaeaea;
+  flex-shrink: 0;
 }
 
 .container header .left-content,
