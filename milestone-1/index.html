@@ -27,14 +27,17 @@
       <div class="container">
         <div class="sidebar">
           <header>
+            <!-- My profile -->
             <div class="left-content">
               <img
                 id="img-profile"
                 :src="myProfile.avatar"
                 :alt="myProfile.name"
               />
-              <span> {{ myProfile.name }} </span>
+              <h4>{{ myProfile.name }}</h4>
             </div>
+            <!-- /My profile -->
+            <!-- Icons -->
             <div class="right-content">
               <ul class="sidebar-icons">
                 <li>
@@ -48,8 +51,10 @@
                 </li>
               </ul>
             </div>
+            <!-- /Icons -->
           </header>
           <main>
+            <!-- Notifications -->
             <div class="notification-settings">
               <div class="notification-icon">
                 <i class="fa-regular fa-bell-slash"></i>
@@ -59,23 +64,29 @@
                 <a href="#">Attiva notifiche desktop</a>
               </div>
             </div>
+            <!-- /Notifications -->
+            <!-- Search bar -->
             <div class="search-bar">
               <i class="fa-solid fa-magnifying-glass"></i>
               <input type="text" placeholder="Cerca o inizia una nuova chat" />
             </div>
+            <!-- /Search bar -->
+            <!-- Contact list -->
             <ul class="contacts-list">
               <li v-for="(contact,index) in contacts">
                 <div class="contact-info">
                   <img :src="contact.avatar" :alt="contact.name" />
-                  <span>{{ contact.name }}</span>
+                  <h4>{{ contact.name }}</h4>
                 </div>
                 <hr v-if="index < contacts.length - 1" />
               </li>
             </ul>
+            <!-- /Contact list -->
           </main>
         </div>
         <div class="main-content">
           <header>
+            <!-- Main header -->
             <div class="left-content">
               <img
                 id="img-profile"
@@ -87,6 +98,8 @@
                 <div class="last-access">Ultimo accesso oggi alle</div>
               </div>
             </div>
+            <!-- /Main header -->
+            <!-- Icons -->
             <div class="right-content">
               <ul class="sidebar-icons">
                 <li>
@@ -100,8 +113,10 @@
                 </li>
               </ul>
             </div>
+            <!-- /Icons -->
           </header>
           <main></main>
+          <!-- Main footer -->
           <footer>
             <div class="footer-content">
               <a href="#"><i class="fa-regular fa-face-smile"></i></a>
@@ -109,6 +124,7 @@
               <a href="#"><i class="fa-solid fa-microphone"></i></a>
             </div>
           </footer>
+          <!-- /Main footer -->
         </div>
       </div>
     </div>
