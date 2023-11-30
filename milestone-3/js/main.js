@@ -7,14 +7,11 @@ createApp({
   data() {
     return {
       activeUser: 0,
-      formattedDate: '',
       newText: null,
-      messageDate: null,
       myProfile: [
         {
           name: 'Maria Rossi',
           avatar: './img/avatar_io.jpg',
-          messages: [],
         },
       ],
       contacts: [
@@ -194,13 +191,24 @@ createApp({
 
     newMessage() {
       if (this.newText.trim() === '') return;
-      const message = {
-        date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'),
+      const messageSent = {
+        date: DateTime.now().toFormat('HH:mm'),
         message: this.newText,
         status: 'sent',
       };
-      this.contacts[this.activeUser].messages.push(message);
+      this.contacts[this.activeUser].messages.push(messageSent);
+      setTimeout(this.automaticAnswer, 1000);
       this.newText = null;
+    },
+
+    automaticAnswer() {
+      const messageReceived = {
+        date: DateTime.now().toFormat('HH:mm'),
+        message: 'Ok',
+        status: 'received',
+      };
+      this.contacts[this.activeUser].messages.push(messageReceived);
+      console.log(messageReceived, 'pushato');
     },
   },
 
