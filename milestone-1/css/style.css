@@ -48,11 +48,15 @@ body {
 
 /* #endregion */
 
-/* #region APP */
+/* #region SIDEBAR */
 
 .container .sidebar {
   width: 40%;
 }
+
+/* #endregion */
+
+/* #region HEADER */
 
 .container header {
   height: 70px;
@@ -89,6 +93,10 @@ body {
   font-size: 20px;
   text-align: center;
 }
+
+/* #endregion */
+
+/* #region SIDEBAR MAIN */
 
 .container .main-content {
   width: 60%;
@@ -170,9 +178,17 @@ body {
   flex-direction: column;
 }
 
+/* #endregion */
+
+/* #region MAIN HEADER */
+
 .container .main-content header .profile .last-access {
   color: #6b7376;
 }
+
+/* #endregion */
+
+/* #region MAIN MAIN */
 
 .container .main-content main {
   background-image: url('../img/mine.jpg');
@@ -189,6 +205,10 @@ body {
   background-color: #ffffff;
   align-items: flex-end;
 }
+
+/* #endregion */
+
+/* #region MAIN FOOTER */
 
 .container .main-content footer {
   height: 70px;
