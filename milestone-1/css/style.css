@@ -19,6 +19,7 @@
   padding: 20px 160px;
   display: flex;
   justify-content: center;
+  height: 790px;
 }
 
 img {
@@ -52,6 +53,8 @@ body {
 
 .container .sidebar {
   width: 40%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* #endregion */
@@ -96,19 +99,19 @@ body {
 
 /* #endregion */
 
-/* #region SIDEBAR MAIN */
+/* #region SIDEBAR CONTENT */
 
 .container .main-content {
   width: 60%;
 }
 
-.container .sidebar main .notification-settings {
+.container .sidebar .notification-settings {
   background-color: #8edafc;
   display: flex;
   align-items: center;
 }
 
-.container .sidebar main .notification-settings .notification-icon {
+.container .sidebar .notification-settings .notification-icon {
   background-color: #f8f9fe;
   border-radius: 50%;
   width: 50px;
@@ -117,30 +120,30 @@ body {
   margin: 15px;
 }
 
-.container .sidebar main .notification-settings .text a {
+.container .sidebar .notification-settings .text a {
   color: #5d7485;
 }
 
-.container .sidebar main .notification-settings i {
+.container .sidebar .notification-settings i {
   font-size: 25px;
   line-height: 50px;
   color: #8cdbfc;
 }
 
-.container .sidebar main .search-bar {
+.container .sidebar .search-bar {
   width: 100%;
   display: flex;
   align-items: center;
   background-color: #fafafa;
 }
 
-.container .sidebar main .search-bar i {
+.container .sidebar .search-bar i {
   margin-left: 20px;
   padding: 9px 28px;
   background-color: #fff;
 }
 
-.container .sidebar main .search-bar input {
+.container .sidebar .search-bar input {
   border: none;
   border-radius: 0 5px 5px 0;
   height: 34px;
@@ -150,23 +153,22 @@ body {
   outline: none;
 }
 
-.container .sidebar main .contacts-list {
+.container .sidebar .contacts-list {
   list-style: none;
   background-color: #fff;
-  height: 590px;
   overflow-y: auto;
 }
 
-.container .sidebar main .contact-info {
+.container .sidebar .contact-info {
   display: flex;
   align-items: center;
 }
 
-.container .sidebar main .contact-info:hover {
+.container .sidebar .contact-info:hover {
   background-color: #f5f5f5;
 }
 
-.container .sidebar main .contacts-list img {
+.container .sidebar .contacts-list img {
   width: 60px;
   height: 60px;
   margin: 10px 20px;
