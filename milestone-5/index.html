@@ -75,8 +75,11 @@
           </div>
           <!-- /Search bar -->
           <!-- Contact list -->
-          <ul class="contacts-list" v-if="filteredContacts().length > 0">
-            <li v-for="(contact, index) in filteredContacts()">
+          <ul class="contacts-list">
+            <li
+              v-for="(contact, index) in filteredContacts()"
+              v-show="contact.visible"
+            >
               <div class="contact-info" @click="changeChat(index)">
                 <img :src="contact.avatar" :alt="contact.name" />
                 <h4>{{ contact.name }}</h4>
@@ -125,9 +128,9 @@
                 :class="checkStatus(message)"
               >
                 <div class="message">
+                  <i class="fa-solid fa-angle-down"></i>
                   {{ message.message }}
                   <span>{{ message.date }}</span>
-                  <span><i class="fa-solid fa-angle-down"></i></span>
                 </div>
               </li>
             </ul>
