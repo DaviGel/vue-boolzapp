@@ -75,7 +75,7 @@
           </div>
           <!-- /Search bar -->
           <!-- Contact list -->
-          <ul class="contacts-list">
+          <ul class="contacts-list" v-if="filteredTask().length > 0">
             <li v-for="(contact,index) in filteredContacts()">
               <div class="contact-info" @click="changeChat(index)">
                 <img :src="contact.avatar" :alt="contact.name" />
