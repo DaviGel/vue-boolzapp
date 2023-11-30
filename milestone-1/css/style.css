@@ -35,9 +35,8 @@ hr {
 /* #region BODY */
 
 body {
-  width: 100vw;
   height: 100vh;
-  background: linear-gradient(#009788 15%, #d6dad9 15%);
+  background: linear-gradient(#009788 145px, #d6dad9 0);
   font-family: 'Lato', sans-serif;
   overflow: hidden;
 }
