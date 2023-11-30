@@ -203,4 +203,17 @@ createApp({
       this.newText = null;
     },
   },
+
+  mounted() {
+    this.contacts = this.contacts.map((contact) => {
+      const formattedMessages = contact.messages.map((message) => {
+        const formattedDate = DateTime.fromFormat(
+          message.date,
+          'dd/MM/yyyy HH:mm:ss'
+        ).toFormat('HH:mm');
+        return { ...message, date: formattedDate };
+      });
+      return { ...contact, messages: formattedMessages };
+    });
+  },
 }).mount('#app');
