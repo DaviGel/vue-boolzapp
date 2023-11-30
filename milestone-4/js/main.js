@@ -213,9 +213,18 @@ createApp({
 
     filteredContacts() {
       if (this.contactSearch.trim() !== '') {
-        return this.contacts.filter((contact) =>
-          contact.name.toLowerCase().includes(this.contactSearch.toLowerCase())
-        );
+        return this.contacts
+          .filter((contact) =>
+            contact.name
+              .toLowerCase()
+              .includes(this.contactSearch.toLowerCase())
+          )
+          .map((contact) => {
+            return {
+              ...contact,
+              name: contact.name,
+            };
+          });
       } else {
         return this.contacts;
       }

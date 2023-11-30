@@ -239,6 +239,18 @@ body {
   margin-top: 40px;
 }
 
+.container .main-content main ul li i {
+  display: none;
+}
+
+.container .main-content main ul li:hover i {
+  display: block;
+  font-size: 15px;
+  position: absolute;
+  right: 5px;
+  bottom: 20px;
+}
+
 /* #endregion */
 
 /* #region MAIN FOOTER */
