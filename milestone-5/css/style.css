@@ -225,6 +225,11 @@ body {
   font-size: 10px;
 }
 
+.container .main-content main .received .text-message,
+.container .main-content main .sent .text-message {
+  margin-bottom: 10px;
+}
+
 .container .main-content main .sent {
   justify-content: flex-end;
 }

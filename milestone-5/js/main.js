@@ -211,25 +211,6 @@ createApp({
       this.contacts[this.activeUser].messages.push(messageReceived);
     },
 
-    // filteredContacts() {
-    //   if (this.contactSearch.trim() !== '') {
-    //     return this.contacts
-    //       .filter((contact) =>
-    //         contact.name
-    //           .toLowerCase()
-    //           .includes(this.contactSearch.toLowerCase())
-    //       )
-    //       .map((contact) => {
-    //         return {
-    //           ...contact,
-    //           name: contact.name,
-    //         };
-    //       });
-    //   } else {
-    //     return this.contacts;
-    //   }
-    // },
-
     filteredContacts() {
       this.contacts.forEach((contact) => {
         if (
