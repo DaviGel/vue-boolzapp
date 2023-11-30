@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Mio CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <div class="container">
+        <div class="sidebar">
+          <header>
+            <!-- My profile -->
+            <div class="left-content">
+              <img
+                id="img-profile"
+                :src="myProfile[0].avatar"
+                :alt="myProfile[0].name"
+              />
+              <h4>{{ myProfile[0].name }}</h4>
+            </div>
+            <!-- /My profile -->
+            <!-- Icons -->
+            <div class="right-content">
+              <ul class="sidebar-icons">
+                <li>
+                  <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-message"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                </li>
+              </ul>
+            </div>
+            <!-- /Icons -->
+          </header>
+          <!-- Notifications -->
+          <div class="notification-settings">
+            <div class="notification-icon">
+              <i class="fa-regular fa-bell-slash"></i>
+            </div>
+            <div class="text">
+              <div>Ricevi notifiche di nuovi messaggi</div>
+              <a href="#">Attiva notifiche desktop</a>
+            </div>
+          </div>
+          <!-- /Notifications -->
+          <!-- Search bar -->
+          <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Cerca o inizia una nuova chat" />
+          </div>
+          <!-- /Search bar -->
+          <!-- Contact list -->
+          <ul class="contacts-list">
+            <li v-for="(contact,index) in contacts">
+              <div class="contact-info" @click="changeChat(index)">
+                <img :src="contact.avatar" :alt="contact.name" />
+                <h4>{{ contact.name }}</h4>
+              </div>
+              <hr v-if="index < contacts.length - 1" />
+            </li>
+          </ul>
+          <!-- /Contact list -->
+        </div>
+        <div class="main-content">
+          <header>
+            <!-- Main header -->
+            <div class="left-content">
+              <img
+                id="img-profile"
+                :src="contacts[activeUser].avatar"
+                :alt="contacts[activeUser].name"
+              />
+              <div class="profile">
+                <span> {{ contacts[activeUser].name }} </span>
+                <div class="last-access">Ultimo accesso oggi alle</div>
+              </div>
+            </div>
+            <!-- /Main header -->
+            <!-- Icons -->
+            <div class="right-content">
+              <ul class="sidebar-icons">
+                <li>
+                  <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                </li>
+              </ul>
+            </div>
+            <!-- /Icons -->
+          </header>
+          <main>
+            <ul>
+              <li
+                v-for="(message, index) in contacts[activeUser].messages"
+                :class="checkStatus(message)"
+              >
+                <div class="message">
+                  {{ message.message }}
+                  <span>{{ message.date }}</span>
+                </div>
+              </li>
+            </ul>
+          </main>
+          <footer>
+            <!-- Main footer -->
+            <div class="footer-content">
+              <a href="#"><i class="fa-regular fa-face-smile"></i></a>
+              <input
+                v-model="newText"
+                @keyup.enter="newMessage"
+                type="text"
+                placeholder="Scrivi un messaggio"
+              />
+              <a href="#"><i class="fa-solid fa-microphone"></i></a>
+            </div>
+            <!-- /Main footer -->
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+    <!-- Vue JS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Mio JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
