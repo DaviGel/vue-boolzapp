@@ -26,6 +26,8 @@
 img {
   max-width: 100%;
   border-radius: 50%;
+  display: block;
+  object-fit: cover;
 }
 
 hr {
@@ -179,12 +181,6 @@ body {
   margin: 10px 20px;
 }
 
-.container .sidebar .contacts-list .date-info {
-  color: #bbb9c0;
-  font-weight: 500;
-  font-size: 12px;
-}
-
 .container .main-content {
   display: flex;
   flex-direction: column;
@@ -192,10 +188,13 @@ body {
 
 /* #endregion */
 
-/* #region MAIN HEADER */
+/* #region MAIN & SIDEBAR HEADER */
 
-.container .main-content header .profile .last-access {
+.container .main-content header .profile .last-access,
+.container .sidebar .contacts-list .date-info {
   color: #6b7376;
+  font-weight: normal;
+  font-size: 13px;
 }
 
 /* #endregion */
