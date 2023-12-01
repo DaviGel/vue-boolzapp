@@ -175,6 +175,7 @@ body {
 .container .sidebar .contact-info {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .container .sidebar .contact-info:hover {
