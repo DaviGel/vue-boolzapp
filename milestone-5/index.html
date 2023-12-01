@@ -92,7 +92,7 @@
                   </div>
                 </div>
                 <div class="right-content">
-                  <div class="last-access">{{ lastAccess(index) }}</div>
+                  <div class="last-access">{{ contact.lastAccess }}</div>
                 </div>
               </div>
               <hr v-if="index < contacts.length - 1" />
@@ -112,7 +112,7 @@
               <div class="profile">
                 <span> {{ contacts[activeUser].name }} </span>
                 <div class="last-access">
-                  Ultimo accesso oggi alle {{ lastAccess(activeUser) }}
+                  Ultimo accesso oggi alle {{ contacts[activeUser].lastAccess }}
                 </div>
               </div>
             </div>
@@ -164,14 +164,27 @@
           <footer>
             <!-- Main footer -->
             <div class="footer-content">
-              <a href="#"><i class="fa-regular fa-face-smile"></i></a>
-              <input
-                v-model="newText"
-                @keyup.enter="newMessage"
-                type="text"
-                placeholder="Scrivi un messaggio"
-              />
-              <a href="#"><i class="fa-solid fa-microphone"></i></a>
+              <div class="left-footer">
+                <button href="#">
+                  <i class="fa-regular fa-face-smile"></i>
+                </button>
+              </div>
+              <div class="center-footer">
+                <input
+                  v-model="newText"
+                  @keyup.enter="newMessage"
+                  type="text"
+                  placeholder="Scrivi un messaggio"
+                />
+              </div>
+              <div class="right-footer">
+                <button v-if="newText === ''">
+                  <i class="fa-solid fa-microphone"></i>
+                </button>
+                <button v-else @click.prevent="newMessage">
+                  <i class="fa-regular fa-paper-plane"></i>
+                </button>
+              </div>
             </div>
             <!-- /Main footer -->
           </footer>

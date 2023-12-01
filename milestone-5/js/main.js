@@ -7,7 +7,7 @@ createApp({
   data() {
     return {
       activeUser: 0,
-      newText: null,
+      newText: '',
       contactSearch: '',
       myProfile: [
         {
@@ -199,7 +199,9 @@ createApp({
       };
       this.contacts[this.activeUser].messages.push(messageSent);
       setTimeout(this.automaticAnswer, 1000);
-      this.newText = null;
+      this.contacts[this.activeUser].lastAccess =
+        DateTime.now().toFormat('HH:mm');
+      this.newText = '';
     },
 
     automaticAnswer() {
@@ -228,14 +230,19 @@ createApp({
       this.contacts[this.activeUser].messages.splice(index, 1);
     },
 
-    lastAccess(index) {
+    getLastAccess(index) {
       const lastMessage = this.contacts[index].messages.length - 1;
       return this.contacts[index].messages[lastMessage].date;
     },
   },
 
   mounted() {
-    this.contacts = this.contacts.map((contact) => {
+    this.contacts = this.contacts.map((contact, index) => {
+      const lastAccess = DateTime.fromFormat(
+        this.getLastAccess(index),
+        'dd/MM/yyyy HH:mm:ss'
+      ).toFormat('HH:mm');
+      contact.lastAccess = lastAccess;
       const formattedMessages = contact.messages.map((message) => {
         const formattedDate = DateTime.fromFormat(
           message.date,
