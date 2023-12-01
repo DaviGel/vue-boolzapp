@@ -1,0 +1,350 @@
+/* #region RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* #endregion */
+
+/* #region COMMON */
+
+[v-cloak] {
+  display: none;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px 160px;
+  display: flex;
+  justify-content: center;
+  height: 790px;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+}
+
+hr {
+  color: #f5f5f5;
+}
+
+a {
+  display: inline-block;
+}
+
+button {
+  all: unset;
+}
+
+/* #endregion */
+
+/* #region BODY */
+
+body {
+  height: 100vh;
+  /* Dati pixel fissi invece di 15% e 0 */
+  background: linear-gradient(#009788 145px, #d6dad9 0);
+  font-family: 'Lato', sans-serif;
+  overflow: hidden;
+}
+
+/* #endregion */
+
+/* #region SIDEBAR */
+
+.container .sidebar {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-right: 1px solid #d6d6d6;
+}
+
+/* #endregion */
+
+/* #region HEADER */
+
+.container header {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #eaeaea;
+  flex-shrink: 0;
+}
+
+.container header .left-content,
+.container header .right-content {
+  display: flex;
+  align-items: center;
+}
+
+.container header .left-content img {
+  margin: 0 15px;
+}
+
+.container #img-profile {
+  width: 50px;
+  height: 50px;
+}
+
+.container header .right-content .sidebar-icons {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-right: 20px;
+}
+
+.container header .right-content i {
+  color: #b1b1b1;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* #endregion */
+
+/* #region SIDEBAR CONTENT */
+
+.container main {
+  height: calc(100% - 140px);
+}
+
+.container .main-content {
+  width: 60%;
+}
+
+.container .sidebar .notification-settings {
+  background-color: #8edafc;
+  display: flex;
+  align-items: center;
+}
+
+.container .sidebar .notification-settings .notification-icon {
+  background-color: #f8f9fe;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  margin: 15px;
+}
+
+.container .sidebar .notification-settings .text a {
+  color: #5d7485;
+}
+
+.container .sidebar .notification-settings i {
+  font-size: 25px;
+  line-height: 50px;
+  color: #8cdbfc;
+}
+
+.container .sidebar .search-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #fafafa;
+  padding: 7px;
+}
+
+.container .sidebar .search-bar i {
+  padding: 9px 28px;
+  background-color: #fff;
+  border: 1px solid #f5f5f5;
+}
+
+.container .sidebar .search-bar input {
+  border: none;
+  border-radius: 0 5px 5px 0;
+  height: 34px;
+  flex-grow: 1;
+  padding-left: 10px;
+  outline: none;
+  border-top: 1px solid #f5f5f5;
+  border-right: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.container .sidebar .contacts-list {
+  list-style: none;
+  background-color: #fff;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.container .sidebar .contact-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.container .sidebar .contact-info:hover {
+  background-color: #f5f5f5;
+}
+
+.container .sidebar .contacts-list img {
+  width: 60px;
+  height: 60px;
+  margin: 10px 20px;
+}
+
+.container .sidebar .contact-info .left-content {
+  display: flex;
+  align-items: center;
+}
+
+.container .sidebar .contact-info .right-content {
+  margin: 13px 10px 0 0;
+}
+
+/* #endregion */
+
+/* #region MAIN & SIDEBAR HEADER */
+
+.container .main-content header .profile .last-access,
+.container .sidebar .contacts-list .date-info,
+.container .sidebar .contact-info .right-content {
+  color: #6b7376;
+  font-weight: normal;
+  font-size: 13px;
+}
+
+/* #endregion */
+
+/* #region MAIN CONTENT */
+
+.container .main-content main {
+  background-image: url('../img/mine.jpg');
+  overflow-y: auto;
+}
+
+.container .main-content main ul li {
+  display: flex;
+}
+
+.container .main-content main .received .message,
+.container .main-content main .sent .message {
+  display: inline-block;
+  width: 310px;
+  margin: 5px 100px;
+  padding: 15px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.container .main-content main .received .message {
+  background-color: #ffffff;
+}
+
+.container .main-content main .received span,
+.container .main-content main .sent span {
+  position: absolute;
+  right: 5px;
+  bottom: 7px;
+  font-size: 10px;
+}
+
+.container .main-content main .received .text-message,
+.container .main-content main .sent .text-message {
+  margin-bottom: 10px;
+}
+
+.container .main-content main .dropdown-content {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 20px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.container .main-content main .dropdown-content ul li {
+  padding: 10px;
+}
+
+.container .main-content main .dropdown-content ul li a {
+  all: unset;
+  cursor: pointer;
+}
+
+.container .main-content main .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.container .main-content main .sent {
+  justify-content: flex-end;
+}
+
+.container .main-content main .sent .message {
+  background-color: #d5f9ba;
+}
+
+.container .main-content main > ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.container .main-content main ul li i {
+  display: none;
+  font-size: 15px;
+  position: absolute;
+  right: 5px;
+  top: 7px;
+  cursor: pointer;
+}
+
+.container .main-content main ul li:hover i {
+  display: block;
+}
+
+/* #endregion */
+
+/* #region MAIN FOOTER */
+
+.container .main-content footer {
+  height: 70px;
+  background-color: #f5eee8;
+}
+
+.container .main-content footer .footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0 33px;
+}
+
+.container .main-content footer .footer-content input {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 15px;
+  outline: none;
+}
+
+.container .main-content footer .center-footer {
+  flex-grow: 1;
+  padding: 0 20px;
+}
+
+.container .main-content footer .left-footer,
+.container .main-content footer .right-footer {
+  width: 25px;
+}
+
+.container .main-content footer .footer-content i {
+  font-size: 20px;
+  color: #6c7175;
+  cursor: pointer;
+}
+
+/* #endregion */
