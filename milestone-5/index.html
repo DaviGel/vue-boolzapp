@@ -81,13 +81,18 @@
               v-show="contact.visible"
             >
               <div class="contact-info" @click="changeChat(index)">
-                <img :src="contact.avatar" :alt="contact.name" />
-                <div class="contact-name">
-                  <h4>{{ contact.name }}</h4>
-                  <div class="date-info">
-                    Ultimo messaggio inviato {{
-                    contact.messages[contact.messages.length - 1].date }}
+                <div class="left-content">
+                  <img :src="contact.avatar" :alt="contact.name" />
+                  <div class="contact-name">
+                    <h4>{{ contact.name }}</h4>
+                    <div class="date-info">
+                      Ultimo messaggio inviato {{
+                      contact.messages[contact.messages.length - 1].date }}
+                    </div>
                   </div>
+                </div>
+                <div class="right-content">
+                  <div class="last-access">{{ lastAccess }}</div>
                 </div>
               </div>
               <hr v-if="index < contacts.length - 1" />
@@ -107,7 +112,7 @@
               <div class="profile">
                 <span> {{ contacts[activeUser].name }} </span>
                 <div class="last-access">
-                  Ultimo accesso oggi alle {{ lastMessage }}
+                  Ultimo accesso oggi alle {{ lastAccess }}
                 </div>
               </div>
             </div>

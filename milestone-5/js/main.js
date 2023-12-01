@@ -9,7 +9,7 @@ createApp({
       activeUser: 0,
       newText: null,
       contactSearch: '',
-      lastMessage: null,
+      lastAccess: null,
       myProfile: [
         {
           name: 'Maria Rossi',
@@ -234,7 +234,7 @@ createApp({
 
     lastMessageFn() {
       const index = this.contacts[this.activeUser].messages.length - 1;
-      this.lastMessage = this.contacts[this.activeUser].messages[index].date;
+      this.lastAccess = this.contacts[this.activeUser].messages[index].date;
     },
   },
 

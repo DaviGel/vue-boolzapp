@@ -174,7 +174,8 @@ body {
 
 .container .sidebar .contact-info {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
   cursor: pointer;
 }
 
@@ -188,12 +189,22 @@ body {
   margin: 10px 20px;
 }
 
+.container .sidebar .contact-info .left-content {
+  display: flex;
+  align-items: center;
+}
+
+.container .sidebar .contact-info .right-content {
+  margin: 13px 10px 0 0;
+}
+
 /* #endregion */
 
 /* #region MAIN & SIDEBAR HEADER */
 
 .container .main-content header .profile .last-access,
-.container .sidebar .contacts-list .date-info {
+.container .sidebar .contacts-list .date-info,
+.container .sidebar .contact-info .right-content {
   color: #6b7376;
   font-weight: normal;
   font-size: 13px;
