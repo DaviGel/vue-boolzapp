@@ -212,6 +212,7 @@ createApp({
         status: 'received',
       };
       this.contacts[this.activeUser].messages.push(messageReceived);
+      this.lastMessageFn();
     },
 
     filteredContacts() {
