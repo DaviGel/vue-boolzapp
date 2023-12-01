@@ -207,15 +207,11 @@ createApp({
         status: 'sent',
       };
       this.contacts[this.activeUser].messages.push(messageSent);
-      this.isAnswering();
+      this.answering = true;
+      setTimeout(this.automaticAnswer, 3_000);
       this.contacts[this.activeUser].lastAccess =
         DateTime.now().toFormat('HH:mm');
       this.newText = '';
-    },
-
-    isAnswering() {
-      this.answering = true;
-      setTimeout(this.automaticAnswer, 3000);
     },
 
     automaticAnswer() {
@@ -227,6 +223,8 @@ createApp({
       };
       this.contacts[this.activeUser].messages.push(messageReceived);
       this.answering = false;
+      this.contacts[this.activeUser].lastAccess =
+        DateTime.now().toFormat('HH:mm');
     },
 
     filteredContacts() {
