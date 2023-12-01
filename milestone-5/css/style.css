@@ -106,6 +106,10 @@ body {
 
 /* #region SIDEBAR CONTENT */
 
+.container main {
+  height: calc(100% - 140px);
+}
+
 .container .main-content {
   width: 60%;
 }
@@ -183,11 +187,6 @@ body {
   margin: 10px 20px;
 }
 
-.container .main-content {
-  display: flex;
-  flex-direction: column;
-}
-
 /* #endregion */
 
 /* #region MAIN & SIDEBAR HEADER */
@@ -205,7 +204,6 @@ body {
 
 .container .main-content main {
   background-image: url('../img/mine.jpg');
-  flex-grow: 1;
   overflow-y: auto;
 }
 
