@@ -9,6 +9,7 @@ createApp({
       activeUser: 0,
       newText: null,
       contactSearch: '',
+      lastMessage: null,
       myProfile: [
         {
           name: 'Maria Rossi',
@@ -184,6 +185,7 @@ createApp({
   methods: {
     changeChat(index) {
       this.activeUser = index;
+      this.lastMessageFn();
     },
 
     checkStatus(message) {
@@ -200,6 +202,7 @@ createApp({
       this.contacts[this.activeUser].messages.push(messageSent);
       setTimeout(this.automaticAnswer, 1000);
       this.newText = null;
+      this.lastMessageFn();
     },
 
     automaticAnswer() {
@@ -227,6 +230,11 @@ createApp({
     deleteMessage(index) {
       this.contacts[this.activeUser].messages.splice(index, 1);
     },
+
+    lastMessageFn() {
+      const index = this.contacts[this.activeUser].messages.length - 1;
+      this.lastMessage = this.contacts[this.activeUser].messages[index].date;
+    },
   },
 
   mounted() {
@@ -240,5 +248,6 @@ createApp({
       });
       return { ...contact, messages: formattedMessages };
     });
+    this.lastMessageFn();
   },
 }).mount('#app');
