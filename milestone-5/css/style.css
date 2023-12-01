@@ -141,12 +141,13 @@ body {
   display: flex;
   align-items: center;
   background-color: #fafafa;
+  padding: 7px;
 }
 
 .container .sidebar .search-bar i {
-  margin-left: 20px;
   padding: 9px 28px;
   background-color: #fff;
+  border: 1px solid #f5f5f5;
 }
 
 .container .sidebar .search-bar input {
@@ -154,9 +155,11 @@ body {
   border-radius: 0 5px 5px 0;
   height: 34px;
   flex-grow: 1;
-  margin: 8px 20px 8px 0;
   padding-left: 10px;
   outline: none;
+  border-top: 1px solid #f5f5f5;
+  border-right: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
 }
 
 .container .sidebar .contacts-list {
