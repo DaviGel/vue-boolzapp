@@ -178,6 +178,14 @@ createApp({
           ],
         },
       ],
+
+      defaultAnswer: [
+        'La vita è veramente molto semplice; ma noi insistiamo nel renderla complicata.',
+        'La vita aspetta sempre qualche crisi prima di rivelare se stessa in tutto il suo splendore.',
+        'La vita è come uno specchio: ti sorride se la guardi sorridendo.',
+        'Il trucco dell’umana esistenza non risiede solamente nel vivere, ma anche nel sapere per che cosa si sta vivendo.',
+        'La vita è come un’eco: se non ti piace quello che ti rimanda, devi cambiare il messaggio che invii.',
+      ],
     };
   },
 
@@ -205,9 +213,10 @@ createApp({
     },
 
     automaticAnswer() {
+      const randomicNumber = Math.floor(Math.random() * 4) + 1;
       const messageReceived = {
         date: DateTime.now().toFormat('HH:mm'),
-        message: 'Ok',
+        message: this.defaultAnswer[randomicNumber],
         status: 'received',
       };
       this.contacts[this.activeUser].messages.push(messageReceived);
