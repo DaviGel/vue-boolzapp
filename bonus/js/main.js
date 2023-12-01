@@ -9,6 +9,7 @@ createApp({
       activeUser: 0,
       newText: '',
       contactSearch: '',
+      answering: false,
       myProfile: [
         {
           name: 'Maria Rossi',
@@ -206,10 +207,15 @@ createApp({
         status: 'sent',
       };
       this.contacts[this.activeUser].messages.push(messageSent);
-      setTimeout(this.automaticAnswer, 1000);
+      this.isAnswering();
       this.contacts[this.activeUser].lastAccess =
         DateTime.now().toFormat('HH:mm');
       this.newText = '';
+    },
+
+    isAnswering() {
+      this.answering = true;
+      setTimeout(this.automaticAnswer, 3000);
     },
 
     automaticAnswer() {
@@ -220,6 +226,7 @@ createApp({
         status: 'received',
       };
       this.contacts[this.activeUser].messages.push(messageReceived);
+      this.answering = false;
     },
 
     filteredContacts() {

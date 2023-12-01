@@ -111,9 +111,10 @@
               />
               <div class="profile">
                 <span> {{ contacts[activeUser].name }} </span>
-                <div class="last-access">
+                <div v-if="!answering" class="last-access">
                   Ultimo accesso oggi alle {{ contacts[activeUser].lastAccess }}
                 </div>
+                <div v-else class="last-access">Sta scrivendo..</div>
               </div>
             </div>
             <!-- /Main header -->
